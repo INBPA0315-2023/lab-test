@@ -5,6 +5,7 @@ import lombok.NonNull;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,7 +39,7 @@ public abstract class Repository<T> {
      * @return the list of entities
      */
     public final List<T> getAll() {
-        return this.entities;
+        return Collections.unmodifiableList(this.entities);
     }
 
     /**
